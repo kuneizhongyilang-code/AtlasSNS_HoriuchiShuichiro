@@ -30,13 +30,19 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $request->validate([
+            'username' => [ 'required', 'string', 'min:2', 'max:12', ],
+            'email' => [ 'required', 'string', 'min:5', 'max:40', 'email', 'unique:users,email', ],
+            'password' => [ 'required', 'string', 'min:8', 'max:20', 'regex:/^[a-zA-Z0-9]+$/', ],
+            'password_confirmation' => [ 'required', 'string', 'min:8', 'max:20', 'regex:/^[a-zA-Z0-9]+$/', 'same:password', ], ]);//^[a-zA-Z0-9]+$/「1文字以上の半角英数字だけで構成されている文字列」に完全に一致することを表す
+
         User::create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('added');
+        return redirect('added')->with('username', $request->username);
     }
 
     public function added(): View

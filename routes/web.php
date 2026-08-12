@@ -20,11 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
+Route::middleware('auth')->group(function () {
+// トップページ
 Route::get('top', [PostsController::class, 'index']);
-
+// プロフィールページ
 Route::get('profile', [ProfileController::class, 'profile']);
-
+// ユーザー検索ページ
 Route::get('search', [UsersController::class, 'index']);
-
+// フォローリストページ
 Route::get('follow-list', [PostsController::class, 'index']);
+// フォロワーリストページ
 Route::get('follower-list', [PostsController::class, 'index']);
+});
