@@ -22,9 +22,9 @@ require __DIR__ . '/auth.php';
 
 Route::middleware('auth')->group(function () {
 // トップページ
-Route::get('top', [PostsController::class, 'index']);
+Route::get('top', [PostsController::class, 'index'])->name('top');
 // プロフィールページ
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 // ユーザー検索ページ
 Route::get('search', [UsersController::class, 'index']);
 // フォローリストページ

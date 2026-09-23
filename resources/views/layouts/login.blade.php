@@ -35,17 +35,19 @@
     </div>
     <div id="side-bar">
       <div id="confirm">
-        <p>〇〇さんの</p>
+        @auth
+        <p>{{ Auth::user()->name }}さんの</p>
         <div>
           <p>フォロー数</p>
-          <p>〇〇名</p>
+          <p>{{ $followCount }}名</p>
         </div>
         <p class="btn"><a href="">フォローリスト</a></p>
         <div>
           <p>フォロワー数</p>
-          <p>〇〇名</p>
+          <p>{{ $followerCount }}名</p>
         </div>
         <p class="btn"><a href="">フォロワーリスト</a></p>
+        @endauth
       </div>
       <p class="btn"><a href="">ユーザー検索</a></p>
     </div>
