@@ -26,9 +26,9 @@ Route::get('top', [PostsController::class, 'index'])->name('top');
 // プロフィールページ
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 // ユーザー検索ページ
-Route::get('search', [UsersController::class, 'index']);
+Route::get('search', [UsersController::class, 'index'])>name('search');
 // フォローリストページ
-Route::get('follow-list', [PostsController::class, 'index']);
+Route::get('follow-list', [PostsController::class, 'index'])->name('follow-list');
 // フォロワーリストページ
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('follower-list', [PostsController::class, 'index'])->name('follower-list');
 });
