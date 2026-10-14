@@ -102,3 +102,243 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* ========================================
+   投稿ページ
+======================================== */
+
+.post-page {
+    width: 100%;
+}
+
+
+/* ========================================
+   メッセージ
+======================================== */
+
+.success-message {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #e6f7e6;
+    color: #287a28;
+}
+
+.error-message {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #ffe6e6;
+    color: #cc3333;
+}
+
+.error-message p {
+    margin: 3px 0;
+}
+
+
+/* ========================================
+   投稿フォーム
+======================================== */
+
+.post-form {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: white;
+}
+
+.post-form form {
+    flex: 1;
+}
+
+.post-user-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+}
+
+.post-user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.post-form textarea {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 12px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.post-form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.character-count {
+    color: #888;
+    font-size: 13px;
+}
+
+.post-button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #0875c9;
+    color: white;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    opacity: 0.8;
+}
+
+
+/* ========================================
+   投稿一覧
+======================================== */
+
+.post-list {
+    margin-top: 20px;
+}
+
+.post-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.post-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.post-user-name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.post-date {
+    margin: 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.post-content {
+    margin: 20px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 6px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button {
+    background: #0875c9;
+    color: white;
+}
+
+.delete-button {
+    background: #ddd;
+    color: #333;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    opacity: 0.8;
+}
+
+.no-post {
+    text-align: center;
+    color: #888;
+}
+
+
+/* ========================================
+   投稿編集モーダル
+======================================== */
+
+.edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.edit-modal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.edit-modal-content {
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    padding: 30px;
+    background: white;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.edit-modal-content h3 {
+    margin-top: 0;
+}
+
+.edit-modal-content textarea {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    resize: none;
+}
+
+.edit-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.edit-modal-buttons button {
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-modal-buttons button:hover {
+    opacity: 0.8;
+}

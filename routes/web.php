@@ -23,10 +23,16 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->group(function () {
 // トップページ
 Route::get('top', [PostsController::class, 'index'])->name('top');
+// 投稿登録
+Route::post('posts', [PostsController::class, 'store'])->name('posts.store');
+// 投稿編集
+Route::put('posts/{id}', [PostsController::class, 'update'])->name('posts.update');
+// 投稿削除
+Route::delete('posts/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
 // プロフィールページ
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 // ユーザー検索ページ
-Route::get('search', [UsersController::class, 'index'])>name('search');
+Route::get('search', [UsersController::class, 'index'])->name('search');
 // フォローリストページ
 Route::get('follow-list', [PostsController::class, 'index'])->name('follow-list');
 // フォロワーリストページ
