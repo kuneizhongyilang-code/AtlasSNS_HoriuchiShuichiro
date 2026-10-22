@@ -104,8 +104,10 @@ header{
 .header-user {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 15px;
+    margin-left: auto;
+    padding: 10px 20px;
 }
 
 /* ユーザーアイコン */
@@ -113,6 +115,7 @@ header{
     width: 45px;
     height: 45px;
     flex-shrink: 0;
+    order: 3;
 }
 
 .header-user-icon img {
@@ -121,6 +124,16 @@ header{
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/* アコーディオンメニュー */
+.header-user .menu {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    flex-shrink: 0;
+    order: 2;
 }
 
 /* アコーディオンの矢印 */
@@ -135,10 +148,11 @@ header{
 
 /* ユーザー名 */
 .header-user-name {
-    color: white;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
     white-space: nowrap;
+    order: 1;
 }
 
 a {
