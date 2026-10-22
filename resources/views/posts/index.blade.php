@@ -84,12 +84,9 @@
                             <button
                                 type="button"
                                 class="edit-button"
-                                onclick="openEditModal(
-                                    {{ $post->id }},
-                                    @js($post->post)
-                                )"
+                                onclick="openEditModal({{ $post->id }},@js($post->post))"
                             >
-                                編集
+                                <img src="{{ asset('images/edit.png') }}" alt="編集">
                             </button>
 
                             {{-- 削除 --}}
@@ -103,7 +100,7 @@
                                 @method('DELETE')
 
                                 <button type="submit" class="delete-button">
-                                  <img src="{{ asset('images/trash.png') }}" alt="投稿">
+                                  <img src="{{ asset('images/trash.png') }}" alt="削除">
                                 </button>
                             </form>
 
@@ -147,18 +144,9 @@
                 ></textarea>
 
                 <div class="edit-modal-buttons">
-
-                    <button
-                        type="button"
-                        onclick="closeEditModal()"
-                    >
-                        キャンセル
+                    <button type="submit" class="change-button">
+                        <img src="{{ asset('images/edit.png') }}" alt="変更">
                     </button>
-
-                    <button type="submit">
-                        保存
-                    </button>
-
                 </div>
 
             </form>
